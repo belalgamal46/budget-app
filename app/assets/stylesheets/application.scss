@@ -6,7 +6,12 @@ $text-1: #434b54;
 $text-2: #86898e;
 $text-3: #989da3;
 $splash-bg: #f0f2f1;
-$main-gradient: linear-gradient(to bottom, rgb(55 120 194 / 100%) 0%, rgb(32 72 116) 90%);
+//$main-gradient: linear-gradient(to bottom, rgb(55 120 194 / 100%) 0%, rgb(32 72 116) 90%);
+
+$main-blue: rgb(55, 120, 194);
+$main-blue-transparent: rgba($main-blue, 0.8);
+
+$main-gradient: linear-gradient(to bottom, $main-blue-transparent 0%, rgb(32, 72, 116) 90%);
 
 /* ---------------------- Font Weight ---------------------- */
 $thin-weight: 200;
@@ -164,4 +169,4 @@ $black-weight: 900;
   font-family: ProximaNova, sans-serif;
 }
 
-@import url("splash");
+@import 'splash';
