@@ -1,12 +1,12 @@
 /* ---------------------- Colors ---------------------- */
 $main: #3778c2;
-$main-2: #2C609C;
+$main-2: #2c609c;
 $second: #5fb523;
 $text-1: #434b54;
-$text-2: #86898E;
-$text-3: #989DA3;
-$splash-bg: #F0F2F1;
-$main-gradient: linear-gradient(to bottom, rgba(55,120,194,1) 0%, rgb(32, 72, 116) 90%);
+$text-2: #86898e;
+$text-3: #989da3;
+$splash-bg: #f0f2f1;
+$main-gradient: linear-gradient(to bottom, rgb(55 120 194 / 100%) 0%, rgb(32 72 116) 90%);
 
 /* ---------------------- Font Weight ---------------------- */
 $thin-weight: 200;
@@ -20,148 +20,148 @@ $black-weight: 900;
 
 /* ---------------------- Proxima Nova Font Face ---------------------- */
 @font-face {
-	font-family: 'ProximaNova';
-	font-style: normal;
-	font-weight: $thin-weight;
-	src: url("Fontspring-DEMO-proximanova-thin.otf") format('opentype');
+  font-family: ProximaNova;
+  font-style: normal;
+  font-weight: $thin-weight;
+  src: url("Fontspring-DEMO-proximanova-thin.otf") format('opentype');
 }
 
 @font-face {
-	font-family: 'ProximaNova';
-	font-style: normal;
-	font-weight: $light-weight;
-	src: url("Fontspring-DEMO-proximanova-regular.otf") format('opentype');
+  font-family: ProximaNova;
+  font-style: normal;
+  font-weight: $light-weight;
+  src: url("Fontspring-DEMO-proximanova-regular.otf") format('opentype');
 }
 
 @font-face {
-	font-family: 'ProximaNova';
-	font-style: normal;
-	font-weight: $medium-weight;
-	src: url("Fontspring-DEMO-proximanova-medium.otf") format('opentype');
+  font-family: ProximaNova;
+  font-style: normal;
+  font-weight: $medium-weight;
+  src: url("Fontspring-DEMO-proximanova-medium.otf") format('opentype');
 }
 
 @font-face {
-	font-family: 'ProximaNova';
-	font-style: normal;
-	font-weight: $semibold-weight;
-	src: url("Fontspring-DEMO-proximanova-semibold.otf") format('opentype');
+  font-family: ProximaNova;
+  font-style: normal;
+  font-weight: $semibold-weight;
+  src: url("Fontspring-DEMO-proximanova-semibold.otf") format('opentype');
 }
 
 @font-face {
-	font-family: 'ProximaNova';
-	font-style: normal;
-	font-weight: $bold-weight;
-	src: url("Fontspring-DEMO-proximanova-bold.otf") format('opentype');
+  font-family: ProximaNova;
+  font-style: normal;
+  font-weight: $bold-weight;
+  src: url("Fontspring-DEMO-proximanova-bold.otf") format('opentype');
 }
 
 @font-face {
-	font-family: 'ProximaNova';
-	font-style: normal;
-	font-weight: $extra-bold-weight;
-	src: url("Fontspring-DEMO-proximanova-extrabold.otf") format('opentype');
+  font-family: ProximaNova;
+  font-style: normal;
+  font-weight: $extra-bold-weight;
+  src: url("Fontspring-DEMO-proximanova-extrabold.otf") format('opentype');
 }
 
 @font-face {
-	font-family: 'ProximaNova';
-	font-style: normal;
-	font-weight: $black-weight;
-	src: url("Fontspring-DEMO-proximanova-black.otf") format('opentype');
+  font-family: ProximaNova;
+  font-style: normal;
+  font-weight: $black-weight;
+  src: url("Fontspring-DEMO-proximanova-black.otf") format('opentype');
 }
 
 /* ---------------------- Bio Monster Font Face ---------------------- */
 @font-face {
-	font-family: 'BioMonster';
-	font-weight: normal;
-	src: url('BioMonsters.otf') format('opentype');
+  font-family: BioMonster;
+  font-weight: normal;
+  src: url('BioMonsters.otf') format('opentype');
 }
 
 /* ---------------------- Font Classes ---------------------- */
 .bio-monster-family {
-	font-family: 'BioMonster', 'cursive';
+  font-family: BioMonster, cursive;
 }
 
 .proxima-nova {
-	font-family: 'ProximaNova', 'sans-serif';
-	font-weight: $regular-weight;
+  font-family: ProximaNova, sans-serif;
+  font-weight: $regular-weight;
 }
 
 .proxima-nova-thin {
-	font-family: 'ProximaNova', 'sans-serif';
-	font-weight: $thin-weight;
+  font-family: ProximaNova, sans-serif;
+  font-weight: $thin-weight;
 }
 
 .proxima-nova-light {
-	font-family: 'ProximaNova', 'sans-serif';
-	font-weight: $light-weight;
+  font-family: ProximaNova, sans-serif;
+  font-weight: $light-weight;
 }
 
 .proxima-nova-medium {
-	font-family: 'ProximaNova', 'sans-serif';
-	font-weight: $medium-weight;
+  font-family: ProximaNova, sans-serif;
+  font-weight: $medium-weight;
 }
 
 .proxima-nova-semibold {
-	font-family: 'ProximaNova', 'sans-serif';
-	font-weight: $semibold-weight;
+  font-family: ProximaNova, sans-serif;
+  font-weight: $semibold-weight;
 }
 
 .proxima-nova-bold {
-	font-family: 'ProximaNova', 'sans-serif';
-	font-weight: $bold-weight;
+  font-family: ProximaNova, sans-serif;
+  font-weight: $bold-weight;
 }
 
 .proxima-nova-extra-bold {
-	font-family: 'ProximaNova', 'sans-serif';
-	font-weight: $extra-bold-weight;
+  font-family: ProximaNova, sans-serif;
+  font-weight: $extra-bold-weight;
 }
 
 .proxima-nova-black {
-	font-family: 'ProximaNova', 'sans-serif';
-	font-weight: $black-weight;
+  font-family: ProximaNova, sans-serif;
+  font-weight: $black-weight;
 }
 
 /* ---------------------- Colors Classes ---------------------- */
 .main {
-	color: $main;
+  color: $main;
 }
 
 .bg-main {
-	background-color: $main;
+  background-color: $main;
 }
 
 .bg-main-gradient {
-	background: $main-gradient;
+  background: $main-gradient;
 }
 
 .bg-splash {
-	background-color: $splash-bg;
+  background-color: $splash-bg;
 }
 
 .second {
-	color: $second
+  color: $second;
 }
 
 .bg-second {
-	background-color: $second;
+  background-color: $second;
 }
 
 .text-1 {
-	color: $text-1;
+  color: $text-1;
 }
 
 .text-2 {
-	color: $text-2;
+  color: $text-2;
 }
 
 .text-3 {
-	color: $text-3;
+  color: $text-3;
 }
 
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	font-family: 'ProximaNova', 'sans-serif';
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: ProximaNova, sans-serif;
 }
 
-@import "splash";
+@import url("splash");
