@@ -1,0 +1,18 @@
+<section id='login-page' class="min-vh-100 bg-splash">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do | f | %>
+    <%= render 'layouts/navbar', title: 'LOGIN', form: f, submit_button_text: 'Log In' %>
+    <div class="bg-white border-bottom border-top mb-3">
+      <div class="px-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-100 rounded-0 border-0 border-bottom p-2 outline-none proxima-nova-thin", placeholder: "Email" %>
+      </div>
+
+      <div class="px-3">
+        <%= f.password_field :password, autocomplete: "current-password", class: "w-100 rounded-0 border-0 p-2 outline-none proxima-nova-thin", placeholder: "Password" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="text-center">
+    <%= render "devise/shared/links", forget_password: true, login: false, register: false, confirmation: false %>
+  </div>
+</section>
