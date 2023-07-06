@@ -3,11 +3,11 @@
     <%= render 'layouts/navbar', title: 'LOGIN', form: f, submit_button_text: 'Log In' %>
     <div class="bg-white border-bottom border-top mb-3">
       <div class="px-3">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-100 rounded-0 border-0 border-bottom p-2 outline-none proxima-nova-thin", placeholder: "Email" %>
+        <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", class: "w-100 rounded-0 border-0 border-bottom p-2 outline-none proxima-nova-thin", placeholder: "Email" %>
       </div>
 
       <div class="px-3">
-        <%= f.password_field :password, autocomplete: "current-password", class: "w-100 rounded-0 border-0 p-2 outline-none proxima-nova-thin", placeholder: "Password" %>
+        <%= f.password_field :password, required: true, autocomplete: "current-password", class: "w-100 rounded-0 border-0 p-2 outline-none proxima-nova-thin", placeholder: "Password" %>
       </div>
     </div>
   <% end %>
