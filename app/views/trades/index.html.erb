@@ -14,28 +14,38 @@
 <%= render 'layouts/flash_messages' %>
 <main>
   <section class="d-flex flex-column h-100 justify-content-between">
-    <div class="px-3">
-      <% if @trades.blank? %>
-        <h1 class="mt-5 fst-italic text-center fs-4">Please add a new transaction</h1>
-      <% else %>
-        <% @trades.each do | trade | %>
-          <%= link_to group_trade_path(@group, trade), class: 'd-flex gap-2 mb-3 p-2 bg-white text-decoration-none shadow-sm bg-body-tertiary rounded-1' do %>
-            <div class="flex-grow-1 p-2 d-flex flex-column justify-content-between gap-4">
-              <div class="d-flex justify-content-between">
-                <h2 class="text-2 fs-5 proxima-nova-light m-0">
-                  <%= trade.name %>
-                </h2>
-                <span class="text-2">
+    <div class="d-flex flex-column gap-4">
+      <div class="d-flex align-items-center justify-content-between bg-white p-3">
+        <h2 class="m-0">
+          <%= @group.name %>
+        </h2>
+        <p class="m-0">
+          <%= @group.group_trades_total %>
+        </p>
+      </div>
+      <div class="px-3">
+        <% if @trades.blank? %>
+          <h1 class="mt-5 fst-italic text-center fs-4">Please add a new transaction</h1>
+        <% else %>
+          <% @trades.each do | trade | %>
+            <%= link_to group_trade_path(@group, trade), class: 'd-flex gap-2 mb-3 p-2 bg-white text-decoration-none shadow-sm rounded-1' do %>
+              <div class="flex-grow-1 p-2 d-flex flex-column justify-content-between gap-4">
+                <div class="d-flex justify-content-between">
+                  <h3 class="text-2 fs-5 proxima-nova-light m-0">
+                    <%= trade.name %>
+                  </h3>
+                  <span class="text-2">
                   &dollar;<%= trade.amount %>
                 </span>
+                </div>
+                <div class="text-2 border-top pt-1">
+                  <%= trade.created_at.strftime("%d %b %y") %>
+                </div>
               </div>
-              <div class="text-2 border-top pt-1">
-                <%= trade.created_at.strftime("%d %b %y") %>
-              </div>
-            </div>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
     <div class="text-center category-btn-container px-3 py-3">
       <%= link_to "Add Transaction", new_group_trade_path, class: 'text-white text-decoration-none proxima-nova-thin border border-1 rounded-1 d-block p-3 fs-5' %>

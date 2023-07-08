@@ -9,7 +9,7 @@ class Group < ApplicationRecord
   end
   validates_format_of :icon,
                       with: %r{^(http(s)://.)[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)$},
-                      multiline: true
+                      multiline: true, message: 'icon must be a url for an image'
 
   def group_trades_total
     trades.sum(:amount)
