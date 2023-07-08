@@ -1,3 +1,47 @@
-<h1>Groups list</h1>
+<header>
+  <nav>
+    <ul class="list-unstyled mb-0 d-flex justify-content-between align-items-center p-3 bg-main-gradient text-white">
+      <li><%= current_user.name %></li>
+      <li class="fs-4 flex-grow-1 text-center">CATEGORIES</li>
+      <li>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'text-white bg-transparent border-0' %>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-<%= link_to "sign out", destroy_user_session_path, data:{ turbo_method: :delete } %>
+<%= render 'layouts/flash_messages' %>
+
+<main class="bg-splash">
+  <section class="d-flex flex-column h-100 justify-content-between">
+    <% if @groups.blank? %>
+      <h1 class="mt-2 fst-italic text-center fs-4">Please add a new category</h1>
+    <% else %>
+      <div class="px-3">
+        <% @groups.each do | group | %>
+          <%= link_to group_trades_path(group), class: 'd-flex gap-2 mb-3 p-2 bg-white text-decoration-none shadow-sm bg-body-tertiary rounded-1' do %>
+            <div class="img-container">
+              <%= image_tag group.icon, alt: group.name, class: 'image' %>
+            </div>
+            <div class="flex-grow-1 p-2 d-flex flex-column justify-content-between">
+              <div class="d-flex justify-content-between">
+                <h2 class="text-2 fs-5 proxima-nova-light m-0">
+                  <%= group.name %>
+                </h2>
+                <span class="text-2">
+                  &dollar;<%= group.group_trades_total %>
+                </span>
+              </div>
+              <div class="text-2 border-top pt-1">
+                <%= group.created_at.strftime("%d %b %y") %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="text-center category-btn-container px-3 py-3">
+      <%= link_to "Add Category", new_group_path, class: 'text-white text-decoration-none proxima-nova-thin border border-1 rounded-1 d-block p-3 fs-5' %>
+    </div>
+  </section>
+</main>
