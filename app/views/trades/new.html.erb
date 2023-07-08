@@ -1,0 +1,41 @@
+<header>
+  <nav>
+    <ul class="list-unstyled mb-0 d-flex justify-content-between align-items-center p-3 bg-main-gradient text-white">
+      <li>
+        <%= link_to "#{image_tag 'arrow_back', alt: 'back-arrow', class: "img-fluid arrow-image"}".html_safe, group_trades_path %>
+      </li>
+      <li class="fs-4 flex-grow-1 text-center">ِADD TRANSACTION</li>
+      <li>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'text-white bg-transparent border-0' %>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<%= render 'shared/errors', obj: @group %>
+<%= render 'layouts/flash_messages' %>
+
+<main>
+  <%= form_with(model: @trade, url: group_trades_path, method: :post, data: { turbo: false }, class: "d-flex flex-column h-100") do | form | %>
+    <div class="bg-white border-bottom border-top mt-3 d-flex flex-column gap-2">
+      <div class="px-3">
+        <%= form.text_field :name, placeholder: "Transaction name", required: true, class: "w-100 rounded-0 border-0 p-2 outline-none proxima-nova-thin border-bottom" %>
+      </div>
+
+      <div class="px-3">
+        <%= form.number_field :amount, placeholder: "Amount", required: true, class: "w-100 rounded-0 border-0 p-2 outline-none proxima-nova-thin border-bottom", step: "any" %>
+      </div>
+
+      <div class="d-flex flex-column px-3">
+        <%= form.label :you_can_choose_one_or_more_category, class: 'p-2 proxima-nova-thin' %>
+        <%= form.select :group_ids, @groups.collect { | category | [category.name, category.id] }, { include_blank: false }, required: true, multiple: true, class: 'p-2 outline-none border-0' %>
+      </div>
+    </div>
+
+    <div class="btn_block flex-grow-1 d-flex align-items-end">
+      <div class="bg-second w-100 p-3">
+        <%= form.submit "Create Transaction", class: "w-100 text-white text-decoration-none proxima-nova-thin border border-1 rounded-1 d-block p-3 fs-5 bg-transparent" %>
+      </div>
+    </div>
+  <% end %>
+</main>
