@@ -1,0 +1,13 @@
+<div class="d-flex align-items-center justify-content-between px-3 py-3 bg-main-gradient mb-3 text-white">
+  <%= link_to "#{image_tag 'arrow_back', alt: 'back-arrow', class: "img-fluid arrow-image"}".html_safe, :back %>
+  <h2 class="m-0">
+    <%= title %>
+  </h2>
+  <div class="actions">
+    <% if form %>
+      <%= form.submit "#{submit_button_text}", class: 'text-white fs-4 bg-transparent border-0' %>
+    <% end %>
+  </div>
+</div>
+
+<%= render 'layouts/flash_messages' %>

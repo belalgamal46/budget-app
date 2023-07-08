@@ -1,0 +1,27 @@
+<section id='login-page' class="min-vh-100 bg-splash">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do | f | %>
+    <nav class="d-flex align-items-center justify-content-between px-3 py-3 bg-main-gradient mb-3 text-white">
+      <%= link_to "#{image_tag 'arrow_back', alt: 'back-arrow', class: "img-fluid arrow-image"}".html_safe, :back %>
+      <h2 class="m-0">
+        LOGIN
+      </h2>
+      <div class="actions">
+        <%= f.submit "Log In", class: 'text-white fs-4 bg-transparent border-0' %>
+      </div>
+    </nav>
+    <%= render 'layouts/flash_messages' %>
+    <div class="bg-white border-bottom border-top mb-3">
+      <div class="px-3">
+        <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", class: "w-100 rounded-0 border-0 border-bottom p-2 outline-none proxima-nova-thin", placeholder: "Email" %>
+      </div>
+
+      <div class="px-3">
+        <%= f.password_field :password, required: true, autocomplete: "current-password", class: "w-100 rounded-0 border-0 p-2 outline-none proxima-nova-thin", placeholder: "Password" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="text-center">
+    <%= render "devise/shared/links" %>
+  </div>
+</section>
