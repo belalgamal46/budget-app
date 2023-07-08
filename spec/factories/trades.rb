@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :trade do
-    name { 'MyString' }
+    name { "MacDonald's" }
     amount { 1 }
-    author_id { nil }
+    user_id { association(:user) }
   end
 end

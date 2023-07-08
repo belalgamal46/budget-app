@@ -60,8 +60,6 @@ gem 'bootsnap', require: false
 # Use Sass in Rails app
 gem 'sass-rails', '~> 6.0.0'
 
-gem 'bootstrap', '~> 5.1.1'
-
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -74,8 +72,9 @@ group :development, :test do
 
   gem 'bullet'
   gem 'factory_bot_rails'
-  gem 'letter_opener'
-  gem 'rspec-rails', '~> 6.0', '>= 6.0.3'
+  gem 'letter_opener', group: :development
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :development do
@@ -91,11 +90,8 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'chromedriver-helper', '~> 1.0'
-  gem 'database_cleaner'
-  gem 'rails-controller-testing'
+  gem 'capybara', '~> 3.39', '>= 3.39.2'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers', '~> 4.0'
+  gem 'shoulda-matchers', '~> 5.0'
   gem 'webdrivers'
 end
