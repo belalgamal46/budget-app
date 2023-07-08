@@ -1,0 +1,36 @@
+<header>
+  <nav>
+    <ul class="list-unstyled mb-0 d-flex justify-content-between align-items-center p-3 bg-main-gradient text-white">
+      <li>
+        <%= link_to "#{image_tag 'arrow_back', alt: 'back-arrow', class: "img-fluid arrow-image"}".html_safe, authenticated_root_path %>
+      </li>
+      <li class="fs-4 flex-grow-1 text-center">ِADD CATEGORY</li>
+      <li>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'text-white bg-transparent border-0' %>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<%= render 'shared/errors', obj: @group %>
+<%= render 'layouts/flash_messages' %>
+
+<main class="bg-splash">
+  <%= form_with(model: @group, class: "d-flex flex-column h-100") do |form| %>
+    <div class="bg-white border-bottom border-top mt-3">
+      <div class="px-3">
+        <%= form.text_field :name, placeholder: "Category name", required: true, class: "w-100 rounded-0 border-0 border-bottom p-2 outline-none proxima-nova-thin" %>
+      </div>
+
+      <div class="px-3">
+        <%= form.text_field :icon, placeholder: "Icon URL", required: true, class: "w-100 rounded-0 border-0 p-2 outline-none proxima-nova-thin" %>
+      </div>
+    </div>
+
+    <div class="btn_block flex-grow-1 d-flex align-items-end">
+      <div class="bg-second w-100 p-3">
+        <%= form.submit "Create Category", class: "w-100 text-white text-decoration-none proxima-nova-thin border border-1 rounded-1 d-block p-3 fs-5 bg-transparent" %>
+      </div>
+    </div>
+  <% end %>
+</main>
