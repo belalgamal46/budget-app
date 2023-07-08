@@ -1,0 +1,44 @@
+<header>
+  <nav>
+    <ul class="list-unstyled mb-0 d-flex justify-content-between align-items-center p-3 bg-main-gradient text-white">
+      <li>
+        <%= link_to "#{image_tag 'arrow_back', alt: 'back-arrow', class: "img-fluid arrow-image"}".html_safe, authenticated_root_path %>
+      </li>
+      <li class="fs-4 flex-grow-1 text-center">TRANSACTIONS</li>
+      <li>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'text-white bg-transparent border-0' %>
+      </li>
+    </ul>
+  </nav>
+</header>
+<%= render 'layouts/flash_messages' %>
+<main>
+  <section class="d-flex flex-column h-100 justify-content-between">
+    <div class="px-3">
+      <% if @trades.blank? %>
+        <h1 class="mt-5 fst-italic text-center fs-4">Please add a new transaction</h1>
+      <% else %>
+        <% @trades.each do | trade | %>
+          <%= link_to group_trade_path(@group, trade), class: 'd-flex gap-2 mb-3 p-2 bg-white text-decoration-none shadow-sm bg-body-tertiary rounded-1' do %>
+            <div class="flex-grow-1 p-2 d-flex flex-column justify-content-between gap-4">
+              <div class="d-flex justify-content-between">
+                <h2 class="text-2 fs-5 proxima-nova-light m-0">
+                  <%= trade.name %>
+                </h2>
+                <span class="text-2">
+                  &dollar;<%= trade.amount %>
+                </span>
+              </div>
+              <div class="text-2 border-top pt-1">
+                <%= trade.created_at.strftime("%d %b %y") %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="text-center category-btn-container px-3 py-3">
+      <%= link_to "Add Transaction", new_group_trade_path, class: 'text-white text-decoration-none proxima-nova-thin border border-1 rounded-1 d-block p-3 fs-5' %>
+    </div>
+  </section>
+</main>
