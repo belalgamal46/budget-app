@@ -77,8 +77,9 @@ RSpec.describe GroupsController, type: :controller do
 
     context 'with valid attributes' do
       it 'creates a new group' do
-        expect { post :create, params: { group: { name: 'Food', icon: 'https://example.com/image.png' } }
-        }.to change(Group, :count).by(1)
+        expect do
+          post :create, params: { group: { name: 'Food', icon: 'https://example.com/image.png' } }
+        end.to change(Group, :count).by(1)
       end
 
       it 'assigns the user as the owner of the group' do
@@ -99,8 +100,9 @@ RSpec.describe GroupsController, type: :controller do
 
     context 'with invalid attributes' do
       it 'does not create a new group' do
-        expect { post :create, params: { group: { name: nil, icon: 'https://example.com/image.png' } }
-        }.not_to change(Group, :count)
+        expect do
+          post :create, params: { group: { name: nil, icon: 'https://example.com/image.png' } }
+        end.not_to change(Group, :count)
       end
 
       it 'renders the new template' do
