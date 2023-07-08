@@ -6,6 +6,8 @@ ruby '3.0.5'
 # Devise gem to handle the login, register, and logout
 gem 'devise', '~> 4.9', '>= 4.9.2'
 
+gem 'bootstrap', '~> 5.1.0'
+
 # CanCanCan gem to handle authorization in the whole application
 gem 'cancancan', '~> 3.5'
 

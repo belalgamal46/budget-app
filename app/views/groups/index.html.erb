@@ -19,7 +19,7 @@
     <% else %>
       <div class="px-3">
         <% @groups.each do | group | %>
-          <%= link_to group_trades_path(group), class: 'd-flex gap-2 mb-3 p-2 bg-white text-decoration-none shadow-sm bg-body-tertiary rounded-1' do %>
+          <%= link_to group_trades_path(group), class: 'd-flex gap-2 mb-3 p-2 bg-white text-decoration-none shadow-sm rounded-1' do %>
             <div class="img-container">
               <%= image_tag group.icon, alt: group.name, class: 'image' %>
             </div>
